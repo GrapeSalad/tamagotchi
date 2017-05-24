@@ -13,6 +13,7 @@ namespace Tamagotchi.Objects
     private int _sleepy;
     private int _happy;
     private int _size;
+    private bool _alive;
 
 
     public TamagotchiCat(string name)
@@ -22,6 +23,7 @@ namespace Tamagotchi.Objects
       _sleepy = 5;
       _happy = 5;
       _size = 0;
+      _alive = true;
       _pets.Add(this);
     }
     public static TamagotchiCat GetPet()
@@ -75,8 +77,6 @@ namespace Tamagotchi.Objects
     public void TakeCare (string name)
     {
     // Debugger.Log(1, "help", "whydoesntthiswork");
-      // string nameParse = string.Slice(name, 0);
-      // int
       if (name[0] == 'f') {
         Console.WriteLine("Hunger Level: + " + _hungry);
         _hungry -= (int)Char.GetNumericValue(name[2]);
@@ -97,20 +97,19 @@ namespace Tamagotchi.Objects
         _hungry++;
         _sleepy++;
       }
-      // switch (name[0])
-      // {
-      //   case 'f':
-      //       _hungry += (int)Char.GetNumericValue(name[2]);
-      //       _happy--;
-      //       _sleepy--;
-      //       break;
-      //   case 's':
-      //       _sleepy += (int)Char.GetNumericValue(name[2]);
-      //       _hungry--;
-      //       _happy--;
-
-
-
+    }
+    public void Death()
+    {
+      if ((_happy <= 0) || (_sleepy >= 10) || (_hungry >= 10)) {
+        _alive =  false;
+      }
+      else{
+        _alive = true;
+      }
+    }
+    public bool GetAlive()
+    {
+      return _alive;
     }
   }
 }

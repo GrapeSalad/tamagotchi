@@ -6,21 +6,34 @@
 <h3>Hunger Level:</h3>
 <p>@Model.GetHungry()</p>
 
-@{
-  if(@Model.GetHungry() >= 7)
+@if(@Model.GetHungry() >= 7)
   {
-    <p>Your cat is getting hungry!</p>
+    <p>I'm so hungry!</p>
   }
-}
 
 <h3>Sleepyness:</h3>
 <p>@Model.GetSleepy()</p>
 
+@if(@Model.GetSleepy() >= 7)
+  {
+    <p>I'm so sleepy, please help me rest!</p>
+  }
+
 <h3>Happyness: </h3>
 <p>@Model.GetHappy()</p>
+
+@if(@Model.GetHappy() <= 3)
+  {
+    <p>I'm a sad kitty.</p>
+  }
 
 <h3>Size: </h3>
 <p>@Model.GetSize()</p>
 
-
-<p><a href="/pet_care">Take care of your cat here</a></p>
+@if(@Model.GetAlive())
+  {
+    <p><a href="/pet_care">Take care of your cat here</a></p>
+  }
+  else{
+    <p>Your cat has died.</p>
+  }

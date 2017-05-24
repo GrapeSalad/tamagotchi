@@ -17,6 +17,7 @@ namespace Tamagotchi
       Post["/show_pet"] = _ =>{
         TamagotchiCat cat = TamagotchiCat.GetPet();
         cat.TakeCare(Request.Form["care"]);
+        cat.Death();
         return View["show_tamagotchi.cshtml", cat];
       };
       Get["/show_pet"] = _ => {
