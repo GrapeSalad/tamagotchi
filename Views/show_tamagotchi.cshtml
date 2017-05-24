@@ -1,0 +1,26 @@
+<h2>This is your pet</h2>
+
+<h3>Name: </h3>
+<p>@Model.GetName()</p>
+
+<h3>Hunger Level:</h3>
+<p>@Model.GetHungry()</p>
+
+@{
+  if(@Model.GetHungry() >= 7)
+  {
+    <p>Your cat is getting hungry!</p>
+  }
+}
+
+<h3>Sleepyness:</h3>
+<p>@Model.GetSleepy()</p>
+
+<h3>Happyness: </h3>
+<p>@Model.GetHappy()</p>
+
+<h3>Size: </h3>
+<p>@Model.GetSize()</p>
+
+
+<p><a href="/pet_care">Take care of your cat here</a></p>
