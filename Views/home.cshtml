@@ -1,0 +1,10 @@
+<h3>Welcome to @Model["home"].GetHomeName()</h3>
+
+@if (@Model["pets"].Count == 0)
+{
+  <h3>No pets have been added yet!</h3>
+}
+
+<p><a href='/homes/@Model["home"].GetId()/pets'>View the pets in this home</a></p>
+<p><a href='/homes/@Model["home"].GetId()/pets/new'>Add a new pet</a></p>
+<p><a href='/'>Return to Main Page</a></p>

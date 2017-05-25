@@ -1,0 +1,13 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h2>Create your Tamagotchi</h2>
+<p>Add a new pet to @Model["home"].GetHomeName()</p>
+
+<form action="/add_pet" method="post">
+  <input id='home-id' name='home-id' type='hidden' value='@Model["home"].GetId()'>
+  <label for="TamagotchiName">Name your pet!</label>
+  <input id="TamagotchiName" name="TamagotchiName">
+  <button type="submit" name="submit">Name IT!</button>
+</form>

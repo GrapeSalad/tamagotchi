@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Tamagotchi.Objects
+namespace Tamagotchies.Objects
 {
   //TRY INHERITED CLASSES???????
-  public class TamagotchiCat
+  public class Tamagotchi
   {
-    private static List<TamagotchiCat> _pets = new List<TamagotchiCat> {};
+    private static List<Tamagotchi> _pets = new List<Tamagotchi> {};
     private string _name;
     private int _hungry;
     private int _sleepy;
@@ -15,8 +15,7 @@ namespace Tamagotchi.Objects
     private int _size;
     private bool _alive;
 
-
-    public TamagotchiCat(string name)
+    public Tamagotchi(string name)
     {
       _name = name;
       _hungry = 5;
@@ -26,7 +25,11 @@ namespace Tamagotchi.Objects
       _alive = true;
       _pets.Add(this);
     }
-    public static TamagotchiCat GetPet()
+    public static List<Tamagotchi> GetAllPets()
+    {
+      return _pets;
+    }
+    public static Tamagotchi GetPet()
     {
       return _pets[0];
     }
@@ -70,7 +73,7 @@ namespace Tamagotchi.Objects
     {
       return _size;
     }
-    // public TamagotchiCat GetPet()
+    // public Tamagotchi GetPet()
     // {
     //   return this;
     // }

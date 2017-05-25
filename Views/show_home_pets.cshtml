@@ -1,0 +1,8 @@
+<h3>Here are all the pets in this home:</h3>
+<ol>
+@foreach (var item in @Model)
+{
+  <li>@item.GetName()</li>
+}
+</ol>
+<a href="/homes">Back to avaliable homes</a>
